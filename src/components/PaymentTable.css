@@ -1,0 +1,40 @@
+/* Estilos para a tabela */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    font-size: 14px; /* Reduzir o tamanho da fonte */
+  }
+  
+  table th,
+  table td {
+    padding: 8px; /* Reduzir o preenchimento interno */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Estilo para o cabeçalho da tabela */
+  table th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilo para as linhas alternadas */
+  table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  /* Estilo para os botões na coluna 'Actions' */
+  table button {
+    padding: 6px 10px; /* Reduzir o tamanho dos botões */
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  table button:hover {
+    background-color: #0056b3;
+  }
+  

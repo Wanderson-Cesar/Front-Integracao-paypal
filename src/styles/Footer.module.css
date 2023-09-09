@@ -1,0 +1,16 @@
+
+/* Versao Mobile */
+
+.footer_content {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 95%;
+    height: 30vh;
+    background-color: red;
+}
+                                        /* Versao para telas grandes */
+@media screen and (min-width: 1440px) {
+    .footer_content {
+        max-width: 1000px;
+    }
+}

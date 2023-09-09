@@ -1,0 +1,114 @@
+.card_Item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 120px;
+    height: 200px;
+    margin: 15px 7px;
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.445);
+
+}
+.card_Item > img {
+    width: 90%;
+    height: 60%;
+    transition: transform 0.3s; /* Adicione uma transição suave para o efeito */
+}
+.card_Item img:hover {
+    transform: scale(1.1); /* Aumenta o tamanho em 10% quando o mouse estiver sobre ele */
+}
+.card_Item > h4 {
+    color: grey;
+    text-transform: uppercase;
+    margin: 5px;
+    margin-bottom: 5%;
+    font-size: .7em;
+    text-align: center;
+    border-top: 1px solid rgba(128, 128, 128, 0.445);
+
+}
+.card_Item > span {
+    color: red;
+    margin-bottom: 2%;
+    font-size: 1.2em;
+    font-weight: 800;
+
+}
+.card_Item > button {
+    display: none;
+}
+@media screen and (min-width:768px) and (max-width: 1023px) {
+    .card_Item {
+        width: 160px;
+        height: 600px;
+        margin: 5px;
+    }
+    .card_Item > h4 {
+        margin: 5px;
+    }
+    .card_Item > span {
+        font-size: 1.2em;
+        margin-bottom: 5%;
+    }
+    .card_Item > a {
+        width: 90%;
+        height: 3em;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(7, 165, 165);
+        color: #fff;
+        text-transform: uppercase;
+        display: block;
+    }
+}
+                                       /*Versao pc */
+@media screen and (min-width: 1024px) and (max-width:1439px) {
+    .card_Item {
+        width: 200px;
+        height: 300px;
+    }    
+    
+    .card_Item > h4 {
+        font-size: .8em;
+    }
+    .card_Item > span {
+        font-size: 1.5em;
+    }
+    .card_Item > a {
+        display: block;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(7, 165, 165);
+        color: #fff;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+}
+@media screen and (min-width:1440px) {
+    .card_Item {
+        width: 160px;
+        height: 300px;
+        margin: 10px;
+    }
+    .card_Item > h4 {
+        font-size: .8em;
+    }
+    .card_Item > span {
+        font-size: 1.5em;
+    }
+    .card_Item > a {
+        width: 90%;
+        height: 3em;
+        border: none;
+        border-radius: 5px;
+        background-color: rgb(7, 165, 165);
+        color: #fff;
+        text-transform: uppercase;
+        display: block;
+    }
+}
