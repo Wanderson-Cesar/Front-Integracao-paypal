@@ -36,7 +36,6 @@ function Product({ products }) {
   }, [product, name, cpf]);
 
   const generateOrderNumber = () => {
-    // Implemente sua lógica para gerar um número de pedido exclusivo aqui
     return Math.floor(Math.random() * 10000).toString();
   };
 
@@ -66,21 +65,15 @@ function Product({ products }) {
         const paymentData = {
           product: product.name,
           amount: product.price,
-          status: 'Aguardando pagamento',
+          status: 'Processando Pagamento',
           customerName: name,
           customerCPF: cpf,
           orderNumber,
         };
         console.log('Dados de pagamento a serem enviados para o servidor:', paymentData);
 
-        // Salve os dados do pagamento no banco de dados (POST)
+       
         await axios.post('http://localhost:5000/api/payment/save-payment', paymentData);
-
-        // Defina um atraso de 1 minuto antes de atualizar o status para "Pago"
-        setTimeout(async () => {
-          await updatePaymentStatus(orderNumber, 'Pago');
-          console.log('Status do pagamento atualizado para "Pago" após 1 minuto.');
-        }, 60000); // 60000 milissegundos = 1 minuto
       },
       onError: (err) => {
         setError(err);
@@ -88,17 +81,6 @@ function Product({ products }) {
       },
     });
     actions.render(paypalRef.current);
-  };
-
-  const updatePaymentStatus = async (orderNumber, newStatus) => {
-    try {
-      const response = await axios.put(`http://localhost:5000/api/payment/update-status/${orderNumber}`, {
-        status: newStatus,
-      });
-      console.log('Status do pagamento atualizado com sucesso:', response.data);
-    } catch (error) {
-      console.error('Erro ao atualizar o status do pagamento:', error);
-    }
   };
 
   if (!product) {
@@ -109,7 +91,7 @@ function Product({ products }) {
     return (    
       <main className='paypal-form2'>
         <div className='desc2'>
-          <h1>Pagamento pre aprovado! Seu pedido pode levar até 30 minutos para ser aprovado no sistema, seu pedido será processado em breve. {product.name}!</h1>
+          <h1>Pagamento pré-aprovado! Seu pagamento pode levar até 30 minutos para ser aprovado no sistema, seu pagamento será processando em breve. {product.name}!</h1>
           <img alt={product.description} src={gif} />
           <a href="/"> Clique aqui para voltar</a>
         </div>
